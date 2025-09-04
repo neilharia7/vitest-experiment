@@ -37,10 +37,20 @@ vitest-experiment/
 
 ### Installation
 
+#### Quick Setup (Recommended)
+```bash
+./setup.sh
+```
+
+#### Manual Setup
 1. Clone the repository
 2. Install dependencies:
    ```bash
    npm install
+   ```
+3. Run tests to verify setup:
+   ```bash
+   npm run test:run
    ```
 
 ### Running the Application
@@ -99,6 +109,7 @@ The project includes a GitHub Actions workflow that:
 - `subtract(a, b)` - Subtracts second number from first
 - `multiply(a, b)` - Multiplies two numbers
 - `divide(a, b)` - Divides first number by second (throws error on division by zero)
+- `power(base, exponent)` - Calculates the power of a number
 
 ### Number Utilities
 - `isEven(num)` - Checks if a number is even
