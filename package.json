@@ -1,0 +1,21 @@
+{
+  "name": "vitest-experiment",
+  "version": "1.0.0",
+  "description": "A sample project demonstrating Vitest testing with GitHub Actions",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "vitest",
+    "test:run": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "dev": "node src/index.js"
+  },
+  "keywords": ["vitest", "testing", "github-actions"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "vitest": "^1.0.0",
+    "@vitest/coverage-v8": "^1.0.0"
+  },
+  "dependencies": {}
+}
