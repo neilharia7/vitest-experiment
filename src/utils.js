@@ -66,3 +66,13 @@ export function factorial(n) {
   }
   return n * factorial(n - 1);
 }
+
+/**
+ * Calculates the power of a number
+ * @param {number} base - The base number
+ * @param {number} exponent - The exponent
+ * @returns {number} Result of base raised to the power of exponent
+ */
+export function power(base, exponent) {
+  return Math.pow(base, exponent);
+}

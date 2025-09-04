@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { add, subtract, multiply, divide, isEven, factorial } from '../src/utils.js';
+import { add, subtract, multiply, divide, isEven, factorial, power } from '../src/utils.js';
 
 describe('Math Utilities', () => {
   describe('add', () => {
@@ -123,6 +123,31 @@ describe('Math Utilities', () => {
     it('should handle edge cases', () => {
       expect(factorial(0)).toBe(1);
       expect(factorial(1)).toBe(1);
+    });
+  });
+
+  describe('power', () => {
+    it('should calculate power correctly for positive numbers', () => {
+      expect(power(2, 3)).toBe(8);
+      expect(power(5, 2)).toBe(25);
+      expect(power(10, 0)).toBe(1);
+    });
+
+    it('should handle negative exponents', () => {
+      expect(power(2, -2)).toBe(0.25);
+      expect(power(4, -1)).toBe(0.25);
+    });
+
+    it('should handle decimal bases and exponents', () => {
+      expect(power(2.5, 2)).toBe(6.25);
+      expect(power(9, 0.5)).toBe(3);
+    });
+
+    it('should handle edge cases', () => {
+      expect(power(0, 5)).toBe(0);
+      expect(power(1, 100)).toBe(1);
+      expect(power(-2, 2)).toBe(4);
+      expect(power(-2, 3)).toBe(-8);
     });
   });
 });
