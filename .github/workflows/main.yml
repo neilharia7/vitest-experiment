@@ -3,7 +3,7 @@ name: Main CI/CD Workflow
 on:
   push:
     branches: [ main ]
-  workflow_dispatch:
+  workflow_dispatch:  # Allows manual triggering from the GitHub UI
 
 jobs:
   trigger-tests:
@@ -14,9 +14,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Trigger Test Workflow
-        uses: benc-uk/workflow-dispatch@v1
+        uses: ./.github/workflows/test.yml
         with:
-          workflow: test.yml
-          token: ${{ secrets.GITHUB_TOKEN }}
-          ref: dev
-          inputs: '{"environment": "staging", "test-type": "coverage", "extra-args": "--verbose"}'
+          environment: 'dev'
+          test-type: 'all'
