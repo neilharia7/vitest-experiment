@@ -1,0 +1,22 @@
+name: Main CI/CD Workflow
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  trigger-tests:
+    name: Trigger Test Workflow
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Trigger Test Workflow
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: test.yml
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: dev
+          inputs: '{"environment": "staging", "test-type": "coverage", "extra-args": "--verbose"}'
